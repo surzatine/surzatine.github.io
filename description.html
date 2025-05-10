@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png">
+    <title>Image and Description</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #36383a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #505050;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img id="img" src="images/redbull.png" alt="Image description">
+        <div class="description">
+            <h2>Beautiful Scenery</h2>
+            <p>This is a picture of a beautiful landscape with mountains, trees, and a serene sky. It reminds us of the
+                peace and tranquility that nature provides.</p>
+        </div>
+        <!-- Add button here -->
+        <button class="btn btn-black btn-block" onclick="Redirect()">Back</button>
+    </div>
+
+</body>
+
+<script>
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const desc = urlParams.get('desc');
+    // console.log(desc);
+
+    if (desc == "gamedev") {
+        document.querySelector('#img').src = "images/game_dev.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>Game Development</h2>
+            <p>Game development is the process of creating a video game. It involves various stages including concept
+            development, design, programming, testing, and release.</p>
+        `;
+    }
+    else if (desc == "hackathon") {
+        document.querySelector('#img').src = "images/hackathon.jpg";
+        document.querySelector('.description').innerHTML = `
+            <h2>Hackathon</h2>
+            <p>I participate Hackathon of 24 hours and build Dungeoun Quest 3d interactive game with QnA with Node js Backend and Mongodb Database</p>
+        `;
+    }
+    else if (desc == "bootcamp") {
+        document.querySelector('#img').src = "images/bootcamp.jpg";
+        document.querySelector('.description').innerHTML = `
+            <h2>Bootcamp</h2>
+            <p>I have attend bootcamp of cybersecurity, cloud computing and devops organized by Durshikshya</p>
+        `;
+    }
+    else if (desc == "webdev") {
+        document.querySelector('#img').src = "images/web_development.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>WEb Development</h2>
+            <p>I have built full stack web application with MERN</p>
+        `;
+    }
+    else if (desc == "amongfury") {
+        document.querySelector('#img').src = "images/Unity.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>Among Fury</h2>
+            <p>A multiplayer FPS game with multiple map selection with Client server architecture with multiple
+						weapons with lobby</p>
+        `;
+    }
+    else if (desc == "dungeonquest") {
+        document.querySelector('#img').src = "images/dungeonQuest.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>Dungeon Quest</h2>
+            <p>A FPS game with interaction with NPC  3d interactive game with QnA with Node js Backend and Mongodb Database completed in 24 hours Hackathon</p>
+        `;
+    }
+    else if (desc == "amongfurybackend") {
+        document.querySelector('#img').src = "images/react.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>Among Fury Backend</h2>
+            <p>It is a backend for Among fury multiplayer games with login, registration, kills, death, lobby etc.</p>
+        `;
+    }
+    else if (desc == "nesta") {
+        document.querySelector('#img').src = "images/nesta.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>Nesta</h2>
+            <p>A social media platform with messanger with RSA encryption, friend accept, request, and delete
+						and story mode delete after 24 hours</p>
+        `;
+    }
+    else if (desc == "discordrat") {
+        document.querySelector('#img').src = "images/mw.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>Discord RAT</h2>
+            <p>A Discord RAT is a backdoor with c2 controlled by Discord that can ability to camera, ss, upload and ddownload file</p>
+        `;
+    }
+    else if (desc == "f1") {
+        document.querySelector('#img').src = "images/f1_unity.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>F!</h2>
+            <p>Currently working on an F1 racing game using Unity for real-time gameplay
+						development and Blender for creating and animating 3D car models and environments.</p>
+        `;
+    }
+    else if (desc == "3D") {
+        document.querySelector('#img').src = "images/redbull.png";
+        document.querySelector('.description').innerHTML = `
+            <h2>3D Modeling</h2>
+            <p>Proficient in Blender for 3D modeling, texturing, rigging, animation, and rendering for
+								game assets and environments.</</p>
+        `;
+    }
+    else {
+        document.querySelector('#img').src = "images/404.jpg";
+        document.querySelector('.description').innerHTML = `
+            <h2>404 Error</h2>
+            <p>404 – Looks like this page took a wrong turn. <br> Even GPS can't help us now! 🧭😂</p>
+        `;
+    }
+
+    function Redirect() {
+        // Redirect to another page
+        window.location.href = "./index.html";
+    }
+</script>
+
+</html>

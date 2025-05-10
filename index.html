@@ -1,357 +1,586 @@
-<!DOCTYPE html>
+<!-- /*
+* Template Name: Medio
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
 <html lang="en">
 
 <head>
-    <title>Sushant</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .col-sm-4 {
-            border-radius: 10px 0px 0px 10px;
-        }
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .col-sm-8 {
-            border-radius: 0px 10px 10px 0px;
-        }
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="favicon.png">
 
-        /* home */
-        .carousel-caption {
-            /* color: #ff0000; */
-            color: #00ff00;
-        }
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap5" />
 
-        .img-profile {
-            margin: 20px 0px 20px 20px;
-        }
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap"
+		rel="stylesheet">
 
-        .text-profile {
-            margin-top: 40px;
-        }
 
-        /* Spinner */
-        .skill-spinner {
-            margin: 20px;
-            text-align: center;
-        }
+	<link rel="stylesheet" href="fonts/icomoon/style.css">
+	<link rel="stylesheet" href="fonts/feather/style.css">
 
-        .loader {
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            -webkit-animation: spin 2s linear infinite;
-            /* Safari */
-            animation: spin 2s linear infinite;
-        }
+	<link rel="stylesheet" href="css/tiny-slider.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/glightbox.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Surzatine</title>
 
-        .loader-php {
-            border-top: 16px solid #0000ff;
-        }
+	<!-- From 3d site -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-        .loader-c23 {
-            border-top: 16px solid #00ff00;
-        }
+		body {
+			background-color: #D2D2D2;
+			background-image:
+				repeating-linear-gradient(to right, transparent 0 100px,
+					#25283b22 100px 101px),
+				repeating-linear-gradient(to bottom, transparent 0 100px,
+					#25283b22 100px 101px);
+		}
 
-        .loader-linux {
-            border-top: 16px solid #ff0000;
-        }
-
-        /* Experience */
-        .card-experience {
-            margin: 20px;
-            border-radius: 8px;
-        }
-
-        .card-padding {
-            padding: 10px;
-        }
-
-        .column-card {
-            border: 1px solid #1782bf;
-            border-radius: 8px;
-            margin: 2px;
-        }
-
-        /* Contact */
-        .div-contact {
-            text-align: center;
-        }
-
-        .div-contact svg {
-            margin: 15px;
-        }
-
-        .btn-success {
-            padding: 10px 20px;
-        }
-
-        /* footer */
-        .div-footer {
-            background-color: #212529;
-            text-align: center;
-        }
-
-        #footer-date {
-            text-align: center;
-            color: white;
-            padding: 40px;
-        }
-
-        /* Safari */
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+		body::before {
+			position: absolute;
+			width: min(1400px, 90vw);
+			top: 10%;
+			left: 50%;
+			height: 90%;
+			transform: translateX(-50%);
+			content: '';
+			background-image: url(images/bg.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: top center;
+			pointer-events: none;
+		}
+	</style>
+	<link rel="stylesheet" href="style.css">
 </head>
 
-<body style="height:1500px">
+<body>
 
-    <!-- nav -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <h3>Sushant</h3>
-            </a>
+	<!-- Nav bar -->
+	<nav class="bg-gray-800 text-white p-4 shadow-md">
 
-            <div class="collapse navbar-collapse" id="mynavbar">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+		<div class="container mx-auto flex justify-between items-center">
+			<h1 class="white text-xl font-bold" style="color: white;">Surzatine</h1>
+			<!-- <div class="hidden md:flex space-x-6">
+				<a href="#home" class="hover:text-gray-300">Home</a>
+				<a href="#experience" class="hover:text-gray-300">Experience</a>
+				<a href="#skill" class="hover:text-gray-300">Skill</a>
+				<a href="#contact" class="hover:text-gray-300">Contact</a>
+			</div> -->
+			<button class="md:hidden" id="menu-btn">
+				☰
+			</button>
+		</div>
+		<!-- <div class="hidden flex-col items-center space-y-4 mt-4 md:hidden" id="mobile-menu">
+			<a href="#home" class="hover:text-gray-300">Home</a>
+			<a href="#skill" class="hover:text-gray-300">Skill</a>
+			<a href="#experience" class="hover:text-gray-300">Experience</a>
+			<a href="#contact" class="hover:text-gray-300">Contact</a>
+		</div> -->
+	</nav>
 
-
-    <!-- Carousel -->
-    <div id="home" class="carousel slide" data-bs-ride="carousel">
-
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-        </div>
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="background.gif" alt="Sushant" class="d-block" style="width:100%">
-                <div class="carousel-caption">
-                    <h1>Sushant</h1>
-                    <p>Welcome to My Profile</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <br>
-
-    <div class="container" id="about">
-
-        <!-- About -->
-        <div class="row row-about">
-            <div class="col-sm-4 p-3 bg-dark text-white">
-                <img src="./profile.jpg" alt="" srcset="" class="rounded img-profile" width="300px">
-            </div>
-            <div class="col-sm-8 p-3 bg-dark text-white ">
-                <div class="text-profile">
-                    <h2>It's Sushant</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi fuga voluptas nostrum
-                        exercitationem ducimus adipisci voluptates libero placeat rerum nobis!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, labore!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, harum.</p>
-                    <button class="btn btn-primary">Contact Me</button>
-                </div>
-            </div>
-        </div>
-
-        <br><br>
-
-        <!-- Skills -->
-
-        <h2 id="skills">Skills</h2>
+	<!-- BAnner -->
+	<div class="banner">
+		<div class="slider" style="--quantity: 10">
+			<div class="item" style="--position: 1"><img src="images/dragon_1.jpg" alt=""></div>
+			<div class="item" style="--position: 2"><img src="images/dragon_2.jpg" alt=""></div>
+			<div class="item" style="--position: 3"><img src="images/dragon_3.jpg" alt=""></div>
+			<div class="item" style="--position: 4"><img src="images/dragon_4.jpg" alt=""></div>
+			<div class="item" style="--position: 5"><img src="images/dragon_5.jpg" alt=""></div>
+			<div class="item" style="--position: 6"><img src="images/dragon_6.jpg" alt=""></div>
+			<div class="item" style="--position: 7"><img src="images/dragon_7.jpg" alt=""></div>
+			<div class="item" style="--position: 8"><img src="images/dragon_8.jpg" alt=""></div>
+			<div class="item" style="--position: 9"><img src="images/dragon_9.jpg" alt=""></div>
+			<div class="item" style="--position: 10"><img src="images/dragon_10.jpg" alt=""></div>
+		</div>
+		<div class="content">
+			<h1 data-content="SUSHANT">
+				SUSHANT
+			</h1>
+			<div class="author">
+				<h2>Surzatine</h2>
+				<p><b>Game Developer</b></p>
+				<p>
+					Enjoy visiting my repos.
+				</p>
+			</div>
+			<div class="model"></div>
+		</div>
+	</div>
 
 
-        <div class="row">
+	<!-- Experiences -->
+	<div class="section bg-light">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-12 text-center" data-aos="fade-up">
+					<span class="subheading d-inline-block mb-2">Experience</span>
+					<h2>These are the Experiences</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="0">
+					<div class="service grayscale">
+						<div class="service-img">
+							<a href="description.html?desc=gamedev"><img src="images/game_dev.png" alt="Image"
+									class="img-fluid"></a>
+						</div>
+						<div class="service-inner">
+							<span></span>
+							<h3>Game Dev</h3>
+							<p>Developed interactive 2D and 3D games in Unity using C#, focusing on gameplay mechanics,
+								UI integration, and performance optimization.</p>
+							<p class="mb-0"><a href="description.html?desc=gamedev" class="more">Learn more</a></p>
+						</div>
 
-            <!-- Spinner -->
-            <div class="col p-3 ">
-                <div class="loader loader-php"> </div>
-                <br> PHP
-            </div>
-            <div class="col p-3 ">
-                <div class="loader loader-c23"> </div>
-                <br> C#
-            </div>
-            <div class="col p-3 ">
-                <div class="loader loader-linux"> </div>
-                <br> Linux
-            </div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+					<div class="service grayscale">
+						<div class="service-img">
+							<a href="description.html?desc=hackathon"><img src="images/hackathon.jpg" alt="Image"
+									class="img-fluid"></a>
+						</div>
+						<div class="service-inner">
+							<span></span>
+							<h3>Hackathon</h3>
+							<p>Developed 3D character movement with interaction with NPC games with unity focusing on
+								QnA section with backend NodeJS and MongoDB database</p>
+							<p class="mb-0"><a href="description.html?desc=hackathon" class="more">Learn more</a></p>
+						</div>
 
-            <div class="spinner-glow">
-                <div class="spinner-grow text-muted"></div>
-                <div class="spinner-grow text-primary"></div>
-                <div class="spinner-grow text-success"></div>
-                <div class="spinner-grow text-info"></div>
-                <div class="spinner-grow text-warning"></div>
-                <div class="spinner-grow text-danger"></div>
-                <div class="spinner-grow text-secondary"></div>
-                <div class="spinner-grow text-dark"></div>
-                <div class="spinner-grow text-light"></div>
-            </div>
+					</div>
+				</div>
+				<div class="col-lg-4 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+					<div class="service grayscale">
+						<div class="service-img">
+							<a href="description.html?desc=bootcamp"><img src="images/bootcamp.jpg" alt="Image"
+									class="img-fluid"></a>
+						</div>
+						<div class="service-inner">
+							<span></span>
+							<h3>Ethical Hacking Bootcamp</h3>
+							<p>Completed a practical bootcamp where I learned the basics of cybersecurity, cloud
+								computing (AWS), and DevOps, including setting up cloud services, securing systems, and
+								using tools like Docker and Jenkins for automation.</p>
+							<p class="mb-0"><a href="description.html?desc=bootcamp" class="more">Learn more</a></p>
+						</div>
 
-            <br><br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Projects -->
+	<div class="section">
+		<div class="container">
+			<div class="row justify-content-center mb-5">
+				<div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
+					<span class="subheading mb-2 d-inline-block">Awesome Projects</span>
+					<h2 class="mb-4">Portfolio</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+							<a href="description.html?desc=webdev" class="media-1 glightbox">
+								<img src="images/web_development.png" alt="Image" class="img-fluid">
+								<div class="media-1-content">
+									<h2>Portfolio</h2>
+									<span class="category">Web Application</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+							<a href="description.html?desc=amongfury" class="media-1 glightbox">
+								<img src="images/Unity.png" alt="Image" class="img-fluid">
+								<div class="media-1-content">
+									<h2>Aong Fury</h2>
+									<span class="category">Multiplayer FPS game</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+							<a href="description.html?desc=dungeonquest" class="media-1 glightbox">
+								<img src="images/dungeonQuest.png" alt="Image" class="img-fluid">
+								<div class="media-1-content">
+									<h2>DungeonQuest</h2>
+									<span class="category">Completed in 24 hr Hackathon</span>
+								</div>
+							</a>
+						</div>
+
+						<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+							<a href="description.html?desc=amongfurybackend" class="media-1 glightbox">
+								<img src="images/react.png" alt="Image" class="img-fluid">
+								<div class="media-1-content">
+									<h2>Among Fury Backend</h2>
+									<span class="category">Written in MERN</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+							<a href="description.html?desc=nesta" class="media-1 glightbox">
+								<img src="images/nesta.png" alt="Image" class="img-fluid">
+								<div class="media-1-content">
+									<h2>Nesta</h2>
+									<span class="category">Social Media Platform</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+							<a href="description.html?desc=discordrat" class="media-1 glightbox">
+								<img src="images/mw.png" alt="Image" class="img-fluid">
+								<div class="media-1-content">
+									<h2>Discord RAT</h2>
+									<span class="category">written in C#</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Currently working -->
+	<div class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 pe-lg-5" data-aos="fade-up">
+					<span class="subheading d-inline-block mb-2">I am currently working on</span>
+					<h2 class="mb-4">F1 racing with Physic Simulation</h2>
+					<p class="mb-5">Currently working on an F1 racing game using Unity for real-time gameplay
+						development and Blender for creating and animating 3D car models and environments.</p>
+					<p><a href="description.html?desc=f1" class="btn btn-black">Get started</a></p>
+				</div>
+				<div class="col-lg-8">
+					<div class="row">
+						<div class="col-6 col-lg-6 mt-5" data-aos="fade-up" data-aos-delay="100">
+							<img src="images/redbull.png" alt="Image" class="img-fluid rounded">
+						</div>
+						<div class="col-6 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+							<img src="images/f1_unity.png" alt="Image" class="img-fluid rounded">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Skills -->
+	<div class="section bg-light">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-12 text-center" data-aos="fade-up">
+					<span class="subheading d-inline-block mb-2">Skills</span>
+					<h2>This is What I can have.</h2>
+				</div>
+			</div>
+			<div class="row align-items-stretch">
+				<div class="col-md-6 col-lg-4 mb-4 mb-lg-5" data-aos="fade-up">
+					<div class="unit-4 d-flex">
+						<div class="unit-4-icon me-4"><span class="feather-briefcase"></span></div>
+						<div>
+							<h3>Game Development</h3>
+							<p>Skilled in game development with experience in Unity, C#, and implementing gameplay
+								mechanics, UI, and physics systems.</p>
+							<p><a href="description.html?desc=amongfury" class="more">Learn more</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="100">
+					<div class="unit-4 d-flex">
+						<div class="unit-4-icon me-4"><span class="feather-command"></span></div>
+						<div>
+							<h3>3D Modeling</h3>
+							<p>Proficient in Blender for 3D modeling, texturing, rigging, animation, and rendering for
+								game assets and environments..</p>
+							<p><a href="description.html?desc=3D" class="more">Learn more</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="200">
+					<div class="unit-4 d-flex">
+						<div class="unit-4-icon me-4"><span class="feather-cpu"></span></div>
+						<div>
+							<h3>Coding</h3>
+							<p>Skilled in coding with experience in C#, Python, and MERN for developing applications,
+								games, and automation scripts.</p>
+							<p><a href="description.html?desc=coding" class="more">Learn more</a></p>
+						</div>
+					</div>
+				</div>
 
 
+				<div class="col-md-6 col-lg-4 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="300">
+					<div class="unit-4 d-flex">
+						<div class="unit-4-icon me-4"><span class="feather-home"></span></div>
+						<div>
+							<h3>Adapt Improvise Overcome</h3>
+							<p>Adapted, improvised, and overcame challenges by finding creative solutions and
+								maintaining flexibility in dynamic environments.</p>
+							<p><a href="description.html?desc=aio" class="more">Learn more</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="400">
+					<div class="unit-4 d-flex">
+						<div class="unit-4-icon me-4"><span class="feather-feather"></span></div>
+						<div>
+							<h3>Hacking</h3>
+							<p>Skilled in ethical hacking with expertise in penetration testing, malware development and
+								using tools like Kali Linux, Metasploit, and Wireshark to identify and fix security
+								flaws.</p>
+							<p><a href="description.html?desc=hacking" class="more">Learn more</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 mb-4 mb-lg-5" data-aos="fade-up" data-aos-delay="500">
+					<div class="unit-4 d-flex">
+						<div class="unit-4-icon me-4"><span class="feather-file-text"></span></div>
+						<div>
+							<h3>Fast Learner</h3>
+							<p>Quick to adapt and learn new technologies, tools, and concepts, with the ability to
+								efficiently absorb and apply knowledge in fast-paced environments.</p>
+							<p><a href="description.html?desc=fast" class="more">Learn more</a></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- More Details -->
+	<!-- <div class="section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md-6" data-aos="fade-up">
+					<span class="subheading mb-2 d-inline-block">Testimonials</span>
+					<h2>What's Our Client Think...</h2>
+				</div>
+			</div>
+
+			<div class="testimonial-wrap" data-aos="fade-up" data-aos-delay="100">
+				<div id="testimonial">
+					<div class="item">
+						<div class="testmonial">
+							<span class="quote">&rdquo;</span>
+							<blockquote>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum consequuntur, iure
+									quidem officiis adipisci, error odit omnis consequatur doloremque nobis. Quam vitae
+									omnis perferendis excepturi?</p>
+							</blockquote>
+							<div class="d-flex author align-items-center">
+								<div class="pic">
+									<img src="images/person_1.jpg" alt="Image" class="img-fluid">
+								</div>
+								<div class="author-name">
+									<h2>Jon Smith</h2>
+									<span>CEO, Co-Founder XYZ Inc.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="item">
+						<div class="testmonial">
+							<span class="quote">&rdquo;</span>
+							<blockquote>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum consequuntur, iure
+									quidem officiis adipisci, error odit omnis consequatur doloremque nobis. Quam vitae
+									omnis perferendis excepturi?</p>
+							</blockquote>
+							<div class="d-flex author align-items-center">
+								<div class="pic">
+									<img src="images/person_2.jpg" alt="Image" class="img-fluid">
+								</div>
+								<div class="author-name">
+									<h2>Jon Smith</h2>
+									<span>CEO, Co-Founder XYZ Inc.</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div> -->
 
 
-            <div class="div-experience" id="experience">
-                <h2>Experience</h2>
-
-                <div class="row">
-                    <div class="col p-3 column-card">
-                        <h2>Social Media Platform</h2>
-                        <p>PHP</p>
-                        <div class="card" style="width:400px">
-                            <img class="card-img-top" src="nesta.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Nesta</h4>
-                                <p class="card-text">
-                                    A social media platform made in php with feature of send/receive message,
-                                    add
-                                    friend, story, newsfeed with likes/dislikes and comment.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col p-3 column-card">
-                        <h2>Unity Multiplayer FPS Game</h2>
-                        <p>Unity + Node JS</p>
-                        <div class="card" style="width:400px">
-                            <img class="card-img-top" src="Unity.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">Multiplayer FPS Game</h4>
-                                <p class="card-text">
-                                    A Multiplayer FPS Game made in Unity using Fishnet Networking Solutions and Backend
-                                    Server using Node
-                                    JS + MongoDB.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col p-3 column-card">
-                        <h2>Discord RAT</h2>
-                        <p>PHP</p>
-                        <div class="card" style="width:400px">
-                            <img class="card-img-top" src="mw.png" alt="Card image" style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">RAT</h4>
-                                <p class="card-text">
-                                    A Remote Access Torjan made with C# controlled with discord api.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+	<div class="section mb-5">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-lg-7" data-aos="fade-up">
+					<span class="subheading mb-2 d-inline-block">Other Interests</span>
+					<h2>You May Also be Interested</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+					<a href="description.html?desc=amongfury"><img src="images/Unity.png" alt="Image"
+							class="img-fluid rounded mb-4"></a>
+					<h3 class="h4 mb-3"><a href="#">Among Fury</a></h3>
+					<p>A multiplayer FPS game with multiple map selection with Client server architecture with multiple
+						weapons with lobby</p>
+					<p class="mb-0"><a href="description.html?desc=amongfury" class="more">Find out more</a></p>
+				</div>
+				<div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+					<a href="description.html?desc=nesta"><img src="images/nesta.png" alt="Image"
+							class="img-fluid rounded mb-4"></a>
+					<h3 class="h4 mb-3"><a href="#">Content Creation</a></h3>
+					<p>A social media platform with messanger with RSA encryption, friend accept, request, and delete
+						and story mode delete after 24 hours</p>
+					<p class="mb-0"><a href="description.html?desc=nesta" class="more">Find out more</a></p>
+				</div>
+				<div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+					<a href="description.html?desc=dungeonquest"><img src="images/dungeonQuest.png" alt="Image"
+							class="img-fluid rounded mb-4"></a>
+					<h3 class="h4 mb-3"><a href="#">DungeonQuest</a></h3>
+					<p>A FPS game with interaction with NPC for QNA section completed in 24 hours Hackathon</p>
+					<p class="mb-0"><a href="description.html?desc=dungeonquest" class="more">Find out more</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-            </div>
+	<div class="section section-contact m-md-5 px-md-5">
+		<div class="container">
+			<h2>Connect with Me</h2>
+			<p>Feel free to connect with me for collaboration, insights, or to discuss new opportunities.</p>
 
-        </div>
-    </div>
+			<form action="" class="form-contact">
+				<div class="row">
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Your name">
+						</div>
+					</div>
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Your email">
+						</div>
+					</div>
 
-    <br><br>
+					<div class="col-sm-4 col-md-4 col-lg-4">
+						<input type="submit" class="btn btn-black btn-block" value="Subscribe">
+					</div>
 
-    <!-- Contact -->
-    <div class="container-fluid div-contact" id="contact">
-        <h1>Contact Me</h1>
-        <div class="contact-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#1976f1" class="bi bi-facebook"
-                viewBox="0 0 16 16">
-                <path
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#31a2e9" class="bi bi-twitter"
-                viewBox="0 0 16 16">
-                <path
-                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15" />
-            </svg>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#1a72b6" class="bi bi-linkedin"
-                viewBox="0 0 16 16">
-                <path
-                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-            </svg>
-
-            <a href="https://github.com/surzatine">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="black" class="bi bi-github"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                </svg>
-            </a>
-
-            <a href="https://t.me/zjerry">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#0195c9" class="bi bi-telegram"
-                    viewBox="0 0 16 16">
-                    <path
-                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
-                </svg>
-            </a>
-
-            <br><br>
-
-            <button type="button" class="btn btn-success"
-                onclick="document.location='https://t.me/zjerry'">Message</button>
-        </div>
-    </div>
-
-    <br><br>
-    <div class="container-fluid div-footer">
-        <h4 id="footer-date"></h4>
-    </div>
+				</div>
+			</form>
+		</div>
+	</div>
 
 
+	<div class="site-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Contact</h3>
+						<address>Nepal</address>
+						<ul class="list-unstyled links">
+							<li><a href="tel://9800000000">+977-9800000000</a></li>
+							<li><a href="mailto:surzatine@github.com">surzatine@github.com</a></li>
+						</ul>
+					</div> <!-- /.widget -->
+				</div> <!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Sources</h3>
+						<ul class="list-unstyled float-start links">
+							<li><a href="description.html?desc=404">About us</a></li>
+							<li><a href="description.html?desc=404">Services</a></li>
+							<li><a href="description.html?desc=404">Vision</a></li>
+							<li><a href="description.html?desc=404">Mission</a></li>
+							<li><a href="description.html?desc=404">Terms</a></li>
+							<li><a href="description.html?desc=404">Privacy</a></li>
+						</ul>
+						<ul class="list-unstyled float-start links">
+							<li><a href="description.html?desc=404">Partners</a></li>
+							<li><a href="description.html?desc=404">Business</a></li>
+							<li><a href="description.html?desc=404">Careers</a></li>
+							<li><a href="description.html?desc=404">Blog</a></li>
+							<li><a href="description.html?desc=404">FAQ</a></li>
+							<li><a href="description.html?desc=404">Creative</a></li>
+						</ul>
+					</div> <!-- /.widget -->
+				</div> <!-- /.col-lg-4 -->
+				<div class="col-lg-4">
+					<div class="widget">
+						<h3>Links</h3>
+						<ul class="list-unstyled links">
+							<li><a href="description.html?desc=404">Our Vision</a></li>
+							<li><a href="description.html?desc=404">About us</a></li>
+							<li><a href="description.html?desc=404">Contact us</a></li>
+						</ul>
 
+						<ul class="list-unstyled social">
+							<li><a href="https://instagram.com"><span class="icon-instagram"></span></a></li>
+							<li><a href="https://twitter.com"><span class="icon-twitter"></span></a></li>
+							<li><a href="https://facebook.com"><span class="icon-facebook"></span></a></li>
+							<li><a href="https://linkedin.com"><span class="icon-linkedin"></span></a></li>
+							<li><a href="https://pintrest.com"><span class="icon-pinterest"></span></a></li>
+							<li><a href="https://dribbble.com"><span class="icon-dribbble"></span></a></li>
+						</ul>
+					</div> <!-- /.widget -->
+				</div> <!-- /.col-lg-4 -->
+			</div> <!-- /.row -->
+
+			<div class="row mt-5">
+				<div class="col-12 text-center">
+					<p class="mb-0">Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
+						Designed by Surzatine
+						<!-- License information: https://untree.co/license/ -->
+					</p>
+				</div>
+			</div>
+		</div> <!-- /.container -->
+	</div> <!-- /.site-footer -->
+
+
+	<!-- Preloader -->
+	<div id="overlayer"></div>
+	<div class="loader">
+		<div class="spinner-border" role="status">
+			<span class="visually-hidden">Loading...</span>
+		</div>
+	</div>
+
+	<script>
+		document.getElementById('menu-btn').addEventListener('click', function () {
+			document.getElementById('mobile-menu').classList.toggle('hidden');
+		});
+	</script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/navbar.js"></script>
+	<script src="js/glightbox.min.js"></script>
+	<script src="js/rellax.min.js"></script>
+	<script src="js/custom.js"></script>
 </body>
-<script>
-
-    const date1 = new Date();
-    const year = date1.getUTCFullYear();
-    // alert("date1");
-    document.getElementById("footer-date").innerHTML = "Created By sushant | © " + year + " All Rights Reserved"
-</script>
 
 </html>
