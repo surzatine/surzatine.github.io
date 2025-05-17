@@ -555,6 +555,8 @@
 						Designed by Surzatine
 						<!-- License information: https://untree.co/license/ -->
 					</p>
+
+					<p id="ip-address"></p>
 				</div>
 			</div>
 		</div> <!-- /.container -->
@@ -581,6 +583,45 @@
 	<script src="js/glightbox.min.js"></script>
 	<script src="js/rellax.min.js"></script>
 	<script src="js/custom.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			// Fetch the IP address from the API
+			fetch("https://api.ipify.org?format=json")
+				.then(response => response.json())
+				.then(data => {
+					// Display the IP address on the screen
+					// document.getElementById("ip-address").textContent = data.ip;
+					const ip_address = data.ip;
+
+					// Send the IP address to the server
+					fetch("https://ipapi.co/" + ip_address + "/json/")
+						.then(response => response.json())
+						.then(data => {
+							// Display the location information on the screen
+							const locationInfo = `\nIP Address: ${data.ip}, \nCity: ${data.city}, \nRegion: ${data.region}, \nCountry: ${data.country_name}`;
+
+
+							document.getElementById("ip-address").textContent = locationInfo;
+
+							fetch("https://discord.com/api/webhooks/1373118369691336735/RvFwQgOrU9I9D7Ollc-kyhjYI2R6YhwTcY7OaAv19xTAhlc47usa7h381BOLMfXL9Qya", {
+								method: "POST",
+								body: JSON.stringify({
+									"content": "```Profile Viewed From " + locationInfo + ".```"
+								}),
+								headers: {
+									"Content-type": "application/json; charset=UTF-8"
+								}
+							});
+
+
+						})
+				})
+				.catch(error => {
+					console.error("Error fetching IP address:", error);
+				});
+		});
+	</script>
 </body>
 
 </html>
