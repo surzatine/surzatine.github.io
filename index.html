@@ -599,7 +599,7 @@
 						.then(response => response.json())
 						.then(data => {
 							// Display the location information on the screen
-							const locationInfo = `\nIP Address: ${data.ip}, \nCity: ${data.city}, \nRegion: ${data.region}, \nCountry: ${data.country_name}`;
+							const locationInfo = `\nIP Address: ${data.ip}, \nCity: ${data.city}, \nRegion: ${data.region}, \nCountry: ${data.country_name}, \nISP: ${data.org}`;
 
 
 							// document.getElementById("ip-address").textContent = locationInfo;
