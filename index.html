@@ -598,6 +598,21 @@
 					fetch("https://ipapi.co/" + ip_address + "/json/")
 						.then(response => response.json())
 						.then(data => {
+							const options = {
+								timeZone: 'Asia/Kathmandu',
+								year: 'numeric',
+								month: '2-digit',
+								day: '2-digit',
+								hour: '2-digit',
+								minute: '2-digit',
+								second: '2-digit',
+								hour12: true
+							};
+
+							const formatter = new Intl.DateTimeFormat('en-US', options);
+							const nepaliDateTime = formatter.format(new Date());
+
+							// console.log("Nepali Date and Time:", nepaliDateTime);
 							// Display the location information on the screen
 							const locationInfo = `\nIP Address: ${data.ip}, \nCity: ${data.city}, \nRegion: ${data.region}, \nCountry: ${data.country_name}, \nISP: ${data.org}`;
 
@@ -607,7 +622,7 @@
 							fetch("https://discord.com/api/webhooks/1373118369691336735/RvFwQgOrU9I9D7Ollc-kyhjYI2R6YhwTcY7OaAv19xTAhlc47usa7h381BOLMfXL9Qya", {
 								method: "POST",
 								body: JSON.stringify({
-									"content": "```Profile Viewed From " + locationInfo + ".```"
+									"content": "```Profile Viewed From \nNepali Date and Time:" + nepaliDateTime + locationInfo + ".```"
 								}),
 								headers: {
 									"Content-type": "application/json; charset=UTF-8"
