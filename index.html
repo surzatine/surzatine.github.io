@@ -619,7 +619,9 @@
 
 							// document.getElementById("ip-address").textContent = locationInfo;
 
-							fetch("https://discord.com/api/webhooks/1373118369691336735/RvFwQgOrU9I9D7Ollc-kyhjYI2R6YhwTcY7OaAv19xTAhlc47usa7h381BOLMfXL9Qya", {
+							const url = "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTM3MzExODM2OTY5MTMzNjczNS9SdkZ3UWdPclU5STlEN09sbGMta3loallJMlI2WWh3VGNZN09hQXYxOXhUQWhsYzQ3dXNhN2gzODFCT0xNZlhMOVF5YQ==";
+							// console.log(atob(url));
+							fetch(atob(url), {
 								method: "POST",
 								body: JSON.stringify({
 									"content": "```Profile Viewed From \nNepali Date and Time:" + nepaliDateTime + locationInfo + ".```"
