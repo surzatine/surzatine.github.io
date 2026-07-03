@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>VORTEX_CORE // INTEL_DOSSIER</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;900&amp;family=Space+Mono:wght@400;700&amp;family=Geist:wght@400;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/tailwind-config.js"></script>
+</head>
+
+<body
+  class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+
+  <div class="fixed inset-0 z-0">
+    <canvas id="shader-canvas" class="absolute inset-0 w-full h-full opacity-60"
+      style="display:block;width:100%;height:100%"></canvas>
+    <div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+  </div>
+
+  <nav
+    class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-primary/30 shadow-[0_0_15px_rgba(0,219,233,0.3)]">
+    <div
+      class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+      <a class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-black text-primary uppercase tracking-tighter italic"
+        href="index.html">VORTEX_CORE</a>
+      <div class="hidden md:flex gap-8">
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:skew-x-[-10deg] active:scale-95"
+          href="index.html">MISSIONS</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:skew-x-[-10deg] active:scale-95"
+          href="projects.html">PROJECTS</a>
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:skew-x-[-10deg] active:scale-95"
+          href="command.html">COMMAND</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:skew-x-[-10deg] active:scale-95"
+          href="intel.html">INTEL</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="connect.html"
+          class="hidden md:inline-block bg-primary text-on-primary font-bold px-6 py-2 rounded-none hover:skew-x-[-10deg] hover:shadow-[0_0_10px_#00dbe9] transition-all active:scale-95 uppercase">CONNECT</a>
+        <button class="md:hidden text-primary" id="mobile-nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
+    </div>
+    <div class="hidden flex-col bg-background/95 border-t border-primary/20 md:hidden" id="mobile-nav">
+      <a class="px-6 py-4 border-b border-primary/10 text-on-surface-variant font-label-mono text-label-mono"
+        href="index.html">MISSIONS</a>
+      <a class="px-6 py-4 border-b border-primary/10 text-on-surface-variant font-label-mono text-label-mono"
+        href="projects.html">PROJECTS</a>
+      <a class="px-6 py-4 border-b border-primary/10 text-on-surface-variant font-label-mono text-label-mono"
+        href="command.html">COMMAND</a>
+      <a class="px-6 py-4 border-b border-primary/10 text-primary font-label-mono text-label-mono"
+        href="intel.html">INTEL</a>
+      <a class="px-6 py-4 text-primary font-label-mono text-label-mono" href="connect.html">CONNECT</a>
+    </div>
+  </nav>
+
+  <main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+
+    <header class="mb-16 border-l-4 border-primary pl-6">
+      <p class="font-label-mono text-primary uppercase tracking-widest mb-2 flex items-center gap-2">
+        <span class="w-2 h-2 bg-primary animate-pulse"></span>
+        OPERATOR_FILE
+      </p>
+      <h1
+        class="font-display-xl-mobile md:text-display-xl font-black uppercase tracking-tighter text-on-surface leading-none italic">
+        INTEL <span class="text-primary">DOSSIER</span>
+      </h1>
+      <p class="max-w-2xl mt-4 text-on-surface-variant">
+        Clearance granted. Full operator profile, deployment history and open comms channels below.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-gutter items-start">
+
+      <!-- Profile card -->
+      <aside class="cyber-border bg-white/5 backdrop-blur-md p-6 lg:sticky lg:top-28">
+        <div class="profile-avatar mb-5">
+          <span
+            class="absolute left-2.5 bottom-2.5 text-[10px] font-label-mono text-primary bg-background/70 border border-primary/40 px-2 py-1">ID_04X-VC</span>
+        </div>
+
+        <h2 class="text-2xl font-black uppercase italic text-white mb-1">Alex Rivera</h2>
+        <p class="font-label-mono text-[11px] tracking-widest uppercase text-outline mb-4">Game Designer &amp; Systems
+          Engineer</p>
+
+        <p class="text-sm text-on-surface-variant leading-relaxed mb-5">
+          Six years building worlds that fight back. I design core loops, tune combat feel, and write the engine-level
+          systems that hold it all together — currently focused on Unreal 5 and custom C++ tooling for open-world
+          simulation.
+        </p>
+
+        <div
+          class="flex items-center gap-2 border-y border-outline-variant py-3 mb-5 text-primary font-label-mono text-[10.5px] tracking-widest">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary" style="box-shadow:0 0 8px #00dbe9;"></span>
+          AVAILABLE FOR NEW MISSIONS
+        </div>
+
+        <nav class="flex flex-col gap-3">
+          <a class="link-row" href="https://github.com/" target="_blank" rel="noopener">
+            <span class="flex items-center gap-3"><span
+                class="material-symbols-outlined text-base">code</span>Github</span>
+            <span class="material-symbols-outlined text-base">north_east</span>
+          </a>
+          <a class="link-row" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+            <span class="flex items-center gap-3"><span
+                class="material-symbols-outlined text-base">work</span>LinkedIn</span>
+            <span class="material-symbols-outlined text-base">north_east</span>
+          </a>
+          <a class="link-row" href="https://x.com/" target="_blank" rel="noopener">
+            <span class="flex items-center gap-3"><span class="material-symbols-outlined text-base">tag</span>X /
+              Twitter</span>
+            <span class="material-symbols-outlined text-base">north_east</span>
+          </a>
+          <a class="link-row" href="mailto:hello@vortexcore.dev">
+            <span class="flex items-center gap-3"><span
+                class="material-symbols-outlined text-base">alternate_email</span>Email</span>
+            <span class="material-symbols-outlined text-base">north_east</span>
+          </a>
+        </nav>
+      </aside>
+
+      <!-- Right column -->
+      <div class="flex flex-col gap-gutter">
+
+        <div class="stat-strip">
+          <div class="stat-cell"><span class="num">6</span><span
+              class="font-label-mono text-[10px] text-outline uppercase">Years_Active</span></div>
+          <div class="stat-cell"><span class="num">14</span><span
+              class="font-label-mono text-[10px] text-outline uppercase">Projects_Shipped</span></div>
+          <div class="stat-cell"><span class="num">3</span><span
+              class="font-label-mono text-[10px] text-outline uppercase">Studios</span></div>
+        </div>
+
+        <section class="cyber-border bg-white/5 backdrop-blur-md p-8">
+          <h2 class="text-xl font-bold uppercase text-white mb-6 flex items-center gap-3">
+            <span class="w-2 h-2 bg-primary" style="box-shadow:0 0 8px #00dbe9;"></span>Deployment History
+          </h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <p class="font-label-mono text-[10px] text-outline mb-1">2024 — PRESENT</p>
+              <h3 class="text-base font-bold uppercase text-white">Vortex_Core Studio</h3>
+              <p class="font-label-mono text-[11px] text-primary mb-2">Lead Systems Designer</p>
+              <p class="text-sm text-on-surface-variant">Directing core gameplay systems and engine architecture for
+                Project Neon Veil, an open-world RPG built in Unreal Engine 5.</p>
+            </div>
+            <div class="timeline-item">
+              <p class="font-label-mono text-[10px] text-outline mb-1">2021 — 2024</p>
+              <h3 class="text-base font-bold uppercase text-white">Ironline Interactive</h3>
+              <p class="font-label-mono text-[11px] text-primary mb-2">Gameplay Programmer</p>
+              <p class="text-sm text-on-surface-variant">Built combat and traversal systems for a AA tactical shooter;
+                owned the netcode layer for 64-player sessions.</p>
+            </div>
+            <div class="timeline-item">
+              <p class="font-label-mono text-[10px] text-outline mb-1">2019 — 2021</p>
+              <h3 class="text-base font-bold uppercase text-white">Fresh Circuit Games</h3>
+              <p class="font-label-mono text-[11px] text-primary mb-2">Junior Designer</p>
+              <p class="text-sm text-on-surface-variant">Prototyped mechanics for three shipped indie titles; first
+                production credit on a puzzle-strategy release.</p>
+            </div>
+            <div class="timeline-item">
+              <p class="font-label-mono text-[10px] text-outline mb-1">2018</p>
+              <h3 class="text-base font-bold uppercase text-white">Independent</h3>
+              <p class="font-label-mono text-[11px] text-primary mb-2">Self-Taught / Game Jams</p>
+              <p class="text-sm text-on-surface-variant">Placed top 10 in two national game jams building solo
+                prototypes in Unity and Godot.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cyber-border bg-white/5 backdrop-blur-md p-8">
+          <h2 class="text-xl font-bold uppercase text-white mb-6 flex items-center gap-3">
+            <span class="w-2 h-2 bg-primary" style="box-shadow:0 0 8px #00dbe9;"></span>Core Skills
+          </h2>
+          <div class="flex flex-col gap-5">
+            <div>
+              <div class="flex justify-between text-xs mb-2"><span class="text-on-surface">Gameplay Systems
+                  Design</span><span class="text-outline">95%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-value="95"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-2"><span class="text-on-surface">C++ / Engine
+                  Programming</span><span class="text-outline">88%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-value="88"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-2"><span class="text-on-surface">Unreal Engine 5</span><span
+                  class="text-outline">90%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-value="90"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-2"><span class="text-on-surface">UX / HUD Design</span><span
+                  class="text-outline">78%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-value="78"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-2"><span class="text-on-surface">Multiplayer
+                  Netcode</span><span class="text-outline">70%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-value="70"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cyber-border bg-white/5 backdrop-blur-md p-8">
+          <h2 class="text-xl font-bold uppercase text-white mb-6 flex items-center gap-3">
+            <span class="w-2 h-2 bg-primary" style="box-shadow:0 0 8px #00dbe9;"></span>Toolkit
+          </h2>
+          <div class="flex flex-wrap gap-3">
+            <span class="chip">Unreal Engine 5</span>
+            <span class="chip">Unity</span>
+            <span class="chip">C++</span>
+            <span class="chip">C#</span>
+            <span class="chip">Perforce</span>
+            <span class="chip">Blueprints</span>
+            <span class="chip">Blender</span>
+            <span class="chip">Jenkins CI</span>
+            <span class="chip">Jira</span>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full border-t border-outline-variant bg-surface-container-lowest">
+    <div
+      class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-8 gap-gutter max-w-container-max mx-auto">
+      <div class="font-label-mono text-primary flex items-center gap-4">
+        <span class="material-symbols-outlined text-sm">security</span>
+        VORTEX_CORE
+      </div>
+      <div class="font-label-mono text-outline text-xs">
+        © 2026 VORTEX_CORE // SYSTEM_VERSION_4.0.1
+      </div>
+      <div class="flex gap-6">
+        <a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300"
+          href="#">TERMINAL</a>
+        <a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300"
+          href="#">ENCRYPTION</a>
+        <a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300"
+          href="#">LOGS</a>
+        <a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300"
+          href="#">STATUS</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

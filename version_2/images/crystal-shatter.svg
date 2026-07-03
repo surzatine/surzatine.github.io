@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="shatterLight" cx="55%" cy="45%" r="55%">
+    <stop offset="0%" stop-color="#0f2a30"/>
+    <stop offset="100%" stop-color="#04060a"/>
+  </radialGradient>
+  <linearGradient id="shard1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#dbfcff" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#00dbe9" stop-opacity="0.15"/>
+  </linearGradient>
+  <linearGradient id="shard2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#7df4ff" stop-opacity="0.7"/>
+    <stop offset="100%" stop-color="#004f54" stop-opacity="0.1"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="500" fill="url(#shatterLight)"/>
+
+<!-- central light burst -->
+<circle cx="440" cy="230" r="6" fill="#dbfcff"/>
+<g stroke="#dbfcff" stroke-opacity="0.35" stroke-width="1">
+  <line x1="440" y1="230" x2="440" y2="60"/>
+  <line x1="440" y1="230" x2="440" y2="400"/>
+  <line x1="440" y1="230" x2="640" y2="230"/>
+  <line x1="440" y1="230" x2="240" y2="230"/>
+  <line x1="440" y1="230" x2="580" y2="90"/>
+  <line x1="440" y1="230" x2="300" y2="370"/>
+  <line x1="440" y1="230" x2="580" y2="370"/>
+  <line x1="440" y1="230" x2="300" y2="90"/>
+</g>
+
+<!-- crystalline shards fracturing outward -->
+<g stroke="#849495" stroke-opacity="0.3" stroke-width="0.6">
+  <polygon points="440,230 380,120 460,140" fill="url(#shard1)"/>
+  <polygon points="440,230 460,140 540,170" fill="url(#shard2)"/>
+  <polygon points="440,230 540,170 560,260" fill="url(#shard1)"/>
+  <polygon points="440,230 560,260 500,340" fill="url(#shard2)"/>
+  <polygon points="440,230 500,340 410,380" fill="url(#shard1)"/>
+  <polygon points="440,230 410,380 330,330" fill="url(#shard2)"/>
+  <polygon points="440,230 330,330 300,250" fill="url(#shard1)"/>
+  <polygon points="440,230 300,250 340,160" fill="url(#shard2)"/>
+  <polygon points="440,230 340,160 380,120" fill="url(#shard1)"/>
+</g>
+
+<!-- flying debris fragments -->
+<g fill="#7df4ff" opacity="0.5">
+  <polygon points="620,150 640,140 650,165 625,175"/>
+  <polygon points="200,300 220,290 235,315 210,325"/>
+  <polygon points="660,340 680,335 685,360 662,365"/>
+  <polygon points="150,150 170,145 175,165 152,170"/>
+</g>
+<g fill="#dbfcff" opacity="0.7">
+  <circle cx="500" cy="90" r="2"/>
+  <circle cx="290" cy="380" r="1.5"/>
+  <circle cx="600" cy="320" r="2"/>
+  <circle cx="220" cy="180" r="1.6"/>
+</g>
+</svg>

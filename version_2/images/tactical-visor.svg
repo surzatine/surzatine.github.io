@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="bgv" cx="60%" cy="40%" r="75%">
+    <stop offset="0%" stop-color="#1c1210"/>
+    <stop offset="100%" stop-color="#0b0e14"/>
+  </radialGradient>
+  <linearGradient id="visorGlass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#00dbe9" stop-opacity="0.85"/>
+    <stop offset="50%" stop-color="#004f54" stop-opacity="0.7"/>
+    <stop offset="100%" stop-color="#001a1c" stop-opacity="0.9"/>
+  </linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#3b3f47"/>
+    <stop offset="100%" stop-color="#14161b"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="500" fill="url(#bgv)"/>
+
+<!-- steam / sparks background -->
+<g fill="#ff9c4a" opacity="0.5">
+  <circle cx="670" cy="120" r="2"/>
+  <circle cx="700" cy="160" r="1.5"/>
+  <circle cx="640" cy="200" r="1.8"/>
+</g>
+<ellipse cx="680" cy="80" rx="140" ry="90" fill="#5a2b00" opacity="0.15"/>
+
+<!-- helmet shell -->
+<path d="M230 460 C180 400 190 220 320 150 C420 100 560 120 610 210 C650 280 630 400 560 460 Z" fill="url(#metal)" stroke="#849495" stroke-opacity="0.4" stroke-width="2"/>
+
+<!-- visor -->
+<path d="M255 300 C250 220 340 165 430 165 C510 165 570 210 575 280 C580 330 540 360 460 365 C370 372 265 355 255 300 Z" fill="url(#visorGlass)"/>
+
+<!-- HUD reticle lines on visor -->
+<g stroke="#dbfcff" stroke-width="1.5" opacity="0.9" fill="none">
+  <circle cx="420" cy="265" r="55"/>
+  <circle cx="420" cy="265" r="30"/>
+  <line x1="420" y1="200" x2="420" y2="230"/>
+  <line x1="420" y1="300" x2="420" y2="330"/>
+  <line x1="355" y1="265" x2="385" y2="265"/>
+  <line x1="455" y1="265" x2="485" y2="265"/>
+</g>
+<g fill="#dbfcff" opacity="0.85" font-family="monospace" font-size="9">
+  <rect x="300" y="220" width="40" height="10" fill="none" stroke="#00dbe9" stroke-width="0.8"/>
+  <rect x="470" y="300" width="46" height="10" fill="none" stroke="#00dbe9" stroke-width="0.8"/>
+</g>
+<line x1="270" y1="245" x2="580" y2="245" stroke="#00dbe9" stroke-opacity="0.3" stroke-width="1"/>
+<line x1="270" y1="290" x2="580" y2="290" stroke="#00dbe9" stroke-opacity="0.3" stroke-width="1"/>
+
+<!-- panel seams / rivets -->
+<g stroke="#849495" stroke-opacity="0.5" stroke-width="1.5" fill="none">
+  <path d="M235 340 C260 400 320 440 400 450"/>
+  <path d="M615 260 C610 330 570 400 500 445"/>
+</g>
+<g fill="#ff8a3d">
+  <circle cx="245" cy="230" r="3"/>
+  <circle cx="600" cy="240" r="3"/>
+</g>
+</svg>

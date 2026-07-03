@@ -1,0 +1,104 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="serverBg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#0d1620"/>
+    <stop offset="100%" stop-color="#05070a"/>
+  </linearGradient>
+  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#dbfcff" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#dbfcff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="rackFace" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#22262f"/>
+    <stop offset="100%" stop-color="#0e1015"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="600" fill="url(#serverBg)"/>
+
+<!-- volumetric light beams -->
+<polygon points="120,0 260,0 320,600 60,600" fill="url(#beam)"/>
+<polygon points="520,0 640,0 700,600 460,600" fill="url(#beam)" opacity="0.6"/>
+
+<!-- floor grid -->
+<g stroke="#00dbe9" stroke-opacity="0.1">
+  <line x1="0" y1="560" x2="800" y2="560"/>
+  <line x1="0" y1="580" x2="800" y2="580"/>
+</g>
+
+<!-- rows of server racks -->
+<g>
+  <!-- back row (smaller, darker) -->
+  <g fill="#12151b" stroke="#3b494b" stroke-width="1">
+    <rect x="40" y="180" width="60" height="340"/>
+    <rect x="120" y="170" width="60" height="350"/>
+    <rect x="620" y="170" width="60" height="350"/>
+    <rect x="700" y="180" width="60" height="340"/>
+  </g>
+
+  <!-- front row racks -->
+  <g stroke="#00dbe9" stroke-opacity="0.5" stroke-width="1">
+    <rect x="200" y="230" width="90" height="300" fill="url(#rackFace)"/>
+    <rect x="310" y="210" width="90" height="320" fill="url(#rackFace)"/>
+    <rect x="420" y="220" width="90" height="310" fill="url(#rackFace)"/>
+    <rect x="530" y="235" width="90" height="295" fill="url(#rackFace)"/>
+  </g>
+
+  <!-- server unit lines + LEDs -->
+  <g>
+    <!-- generate repeated slat pattern manually -->
+    <g stroke="#3b494b" stroke-width="1">
+      <line x1="200" y1="255" x2="290" y2="255"/><line x1="200" y1="280" x2="290" y2="280"/>
+      <line x1="200" y1="305" x2="290" y2="305"/><line x1="200" y1="330" x2="290" y2="330"/>
+      <line x1="200" y1="355" x2="290" y2="355"/><line x1="200" y1="380" x2="290" y2="380"/>
+      <line x1="200" y1="405" x2="290" y2="405"/><line x1="200" y1="430" x2="290" y2="430"/>
+      <line x1="200" y1="455" x2="290" y2="455"/><line x1="200" y1="480" x2="290" y2="480"/>
+
+      <line x1="310" y1="235" x2="400" y2="235"/><line x1="310" y1="260" x2="400" y2="260"/>
+      <line x1="310" y1="285" x2="400" y2="285"/><line x1="310" y1="310" x2="400" y2="310"/>
+      <line x1="310" y1="335" x2="400" y2="335"/><line x1="310" y1="360" x2="400" y2="360"/>
+      <line x1="310" y1="385" x2="400" y2="385"/><line x1="310" y1="410" x2="400" y2="410"/>
+      <line x1="310" y1="435" x2="400" y2="435"/><line x1="310" y1="460" x2="400" y2="460"/>
+      <line x1="310" y1="485" x2="400" y2="485"/><line x1="310" y1="510" x2="400" y2="510"/>
+
+      <line x1="420" y1="245" x2="510" y2="245"/><line x1="420" y1="270" x2="510" y2="270"/>
+      <line x1="420" y1="295" x2="510" y2="295"/><line x1="420" y1="320" x2="510" y2="320"/>
+      <line x1="420" y1="345" x2="510" y2="345"/><line x1="420" y1="370" x2="510" y2="370"/>
+      <line x1="420" y1="395" x2="510" y2="395"/><line x1="420" y1="420" x2="510" y2="420"/>
+      <line x1="420" y1="445" x2="510" y2="445"/><line x1="420" y1="470" x2="510" y2="470"/>
+      <line x1="420" y1="495" x2="510" y2="495"/>
+
+      <line x1="530" y1="260" x2="620" y2="260"/><line x1="530" y1="285" x2="620" y2="285"/>
+      <line x1="530" y1="310" x2="620" y2="310"/><line x1="530" y1="335" x2="620" y2="335"/>
+      <line x1="530" y1="360" x2="620" y2="360"/><line x1="530" y1="385" x2="620" y2="385"/>
+      <line x1="530" y1="410" x2="620" y2="410"/><line x1="530" y1="435" x2="620" y2="435"/>
+      <line x1="530" y1="460" x2="620" y2="460"/><line x1="530" y1="485" x2="620" y2="485"/>
+    </g>
+    <!-- glowing LEDs -->
+    <g fill="#00dbe9">
+      <circle cx="280" cy="267" r="2"/><circle cx="280" cy="317" r="2"/><circle cx="280" cy="392" r="2"/>
+      <circle cx="390" cy="247" r="2"/><circle cx="390" cy="322" r="2"/><circle cx="390" cy="422" r="2"/>
+      <circle cx="500" cy="282" r="2"/><circle cx="500" cy="357" r="2"/><circle cx="500" cy="457" r="2"/>
+      <circle cx="610" cy="272" r="2"/><circle cx="610" cy="347" r="2"/><circle cx="610" cy="447" r="2"/>
+    </g>
+    <g fill="#ebb2ff" opacity="0.8">
+      <circle cx="280" cy="342" r="2"/><circle cx="390" cy="372" r="2"/>
+      <circle cx="500" cy="407" r="2"/><circle cx="610" cy="397" r="2"/>
+    </g>
+  </g>
+</g>
+
+<!-- coolant pipes -->
+<g fill="none" stroke="#00dbe9" stroke-width="5" stroke-opacity="0.55" stroke-linecap="round">
+  <path d="M0 150 C150 160 250 140 400 150 C550 160 650 140 800 150"/>
+  <path d="M0 560 C200 545 400 570 800 545"/>
+</g>
+<g fill="none" stroke="#dbfcff" stroke-width="1.5" stroke-opacity="0.5">
+  <path d="M0 150 C150 160 250 140 400 150 C550 160 650 140 800 150"/>
+</g>
+
+<!-- catwalk figure silhouette -->
+<g fill="#05070a">
+  <rect x="440" y="470" width="12" height="34" rx="2"/>
+  <circle cx="446" cy="462" r="7"/>
+</g>
+</svg>

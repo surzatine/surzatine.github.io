@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <radialGradient id="mapGlow" cx="50%" cy="50%" r="65%">
+    <stop offset="0%" stop-color="#2a1400"/>
+    <stop offset="100%" stop-color="#08090c"/>
+  </radialGradient>
+  <linearGradient id="nodeGlow" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#ff8a3d"/>
+    <stop offset="100%" stop-color="#ff8a3d" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="800" height="500" fill="url(#mapGlow)"/>
+
+<!-- isometric grid -->
+<g stroke="#ff8a3d" stroke-opacity="0.25" stroke-width="1">
+  <path d="M0 250 L400 60 L800 250 L400 440 Z" fill="none"/>
+  <path d="M50 260 L400 100 L750 260" fill="none"/>
+  <path d="M100 300 L400 150 L700 300" fill="none"/>
+  <path d="M150 340 L400 200 L650 340" fill="none"/>
+  <path d="M200 380 L400 250 L600 380" fill="none"/>
+  <path d="M60 220 L400 380 L740 220" fill="none"/>
+  <path d="M120 190 L400 330 L680 190" fill="none"/>
+  <path d="M180 160 L400 280 L620 160" fill="none"/>
+</g>
+
+<!-- radial lines from center -->
+<g stroke="#ff8a3d" stroke-opacity="0.2" stroke-width="1">
+  <line x1="400" y1="60" x2="400" y2="440"/>
+  <line x1="0" y1="250" x2="800" y2="250"/>
+</g>
+
+<!-- data nodes -->
+<g>
+  <circle cx="400" cy="250" r="40" fill="url(#nodeGlow)"/>
+  <circle cx="400" cy="250" r="7" fill="#ffb454"/>
+  <circle cx="400" cy="250" r="14" fill="none" stroke="#ffb454" stroke-width="1.5"/>
+
+  <circle cx="230" cy="180" r="26" fill="url(#nodeGlow)"/>
+  <circle cx="230" cy="180" r="5" fill="#00dbe9"/>
+
+  <circle cx="560" cy="200" r="26" fill="url(#nodeGlow)"/>
+  <circle cx="560" cy="200" r="5" fill="#00dbe9"/>
+
+  <circle cx="300" cy="340" r="22" fill="url(#nodeGlow)"/>
+  <circle cx="300" cy="340" r="4" fill="#ebb2ff"/>
+
+  <circle cx="510" cy="350" r="22" fill="url(#nodeGlow)"/>
+  <circle cx="510" cy="350" r="4" fill="#ebb2ff"/>
+</g>
+
+<!-- connective data paths -->
+<g stroke="#00dbe9" stroke-width="1.2" opacity="0.7" fill="none">
+  <path d="M400 250 L230 180"/>
+  <path d="M400 250 L560 200"/>
+  <path d="M400 250 L300 340"/>
+  <path d="M400 250 L510 350"/>
+</g>
+
+<!-- holographic text blocks -->
+<g fill="none" stroke="#ffb454" stroke-width="0.8" opacity="0.7">
+  <rect x="60" y="70" width="86" height="16"/>
+  <rect x="640" y="90" width="100" height="16"/>
+  <rect x="90" y="410" width="70" height="16"/>
+  <rect x="620" y="400" width="90" height="16"/>
+</g>
+<g fill="#ffb454" opacity="0.5">
+  <rect x="66" y="76" width="40" height="4"/>
+  <rect x="646" y="96" width="55" height="4"/>
+  <rect x="96" y="416" width="30" height="4"/>
+  <rect x="626" y="406" width="48" height="4"/>
+</g>
+</svg>

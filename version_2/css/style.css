@@ -1,0 +1,285 @@
+/* =========================================================
+   VORTEX_CORE — shared custom styles
+   (Tailwind CDN handles utility classes; this file covers
+   effects and components Tailwind can't express directly)
+   ========================================================= */
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.scanline-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 219, 233, 0.05) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(0, 219, 233, 0.6);
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.cyber-border {
+  border: 1px solid rgba(0, 219, 233, 0.3);
+  position: relative;
+}
+.cyber-border::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 10px; height: 10px;
+  border-top: 2px solid #00dbe9;
+  border-left: 2px solid #00dbe9;
+}
+.cyber-border::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; right: -1px;
+  width: 10px; height: 10px;
+  border-bottom: 2px solid #00dbe9;
+  border-right: 2px solid #00dbe9;
+}
+
+.glow-border {
+  box-shadow: 0 0 0px rgba(0, 219, 233, 0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-border:hover {
+  box-shadow: 0 0 15px rgba(0, 219, 233, 0.4);
+  border-color: #00dbe9;
+}
+
+.glitch-text:hover {
+  text-shadow: 2px 0 #ff0055, -2px 0 #00f0ff;
+}
+
+.fui-bracket {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: #849495;
+}
+
+.bg-glass {
+  backdrop-filter: blur(20px);
+  background: rgba(16, 19, 26, 0.6);
+}
+
+@keyframes loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+/* fade-in-on-scroll target (paired with IntersectionObserver in script.js) */
+.cyber-border.reveal-init {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* =========================================================
+   COMMAND PAGE — capabilities / process / field reports
+   ========================================================= */
+.capability-card .cap-icon {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(0, 219, 233, 0.35);
+  color: #00dbe9;
+  margin-bottom: 18px;
+}
+
+.process-rail {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border: 1px solid #3b494b;
+}
+.process-step {
+  padding: 24px 20px;
+  border-right: 1px solid #3b494b;
+}
+.process-step:last-child { border-right: none; }
+@media (max-width: 900px) {
+  .process-rail { grid-template-columns: 1fr 1fr; }
+  .process-step { border-bottom: 1px solid #3b494b; }
+}
+@media (max-width: 560px) {
+  .process-rail { grid-template-columns: 1fr; }
+}
+
+.report-card .quote-mark {
+  font-family: anybody, sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1;
+  color: #00dbe9;
+}
+
+/* =========================================================
+   CONNECT PAGE — form + channels
+   ========================================================= */
+.field label {
+  font-family: "Space Mono", monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #b9cacb;
+  display: block;
+  margin-bottom: 8px;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  background: #191c22;
+  border: 1px solid #3b494b;
+  color: #e1e2eb;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  padding: 13px 14px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  resize: vertical;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: #5c6673; }
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #00dbe9;
+  box-shadow: 0 0 0 3px rgba(0, 219, 233, 0.15);
+}
+.field textarea { min-height: 140px; }
+.field.error input,
+.field.error textarea { border-color: #ffb4ab; }
+.field-error-msg {
+  display: none;
+  font-size: 10.5px;
+  color: #ffb4ab;
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+.field.error .field-error-msg { display: block; }
+
+.channel-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 14px;
+  border: 1px solid #3b494b;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.channel-row:hover {
+  border-color: #00dbe9;
+  background: rgba(0, 219, 233, 0.06);
+}
+.channel-icon {
+  width: 34px; height: 34px;
+  border: 1px solid #849495;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex: none;
+}
+
+/* =========================================================
+   INTEL PAGE — profile / bio
+   ========================================================= */
+.profile-avatar {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(0, 219, 233, 0.35);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(0, 219, 233, 0.35), transparent 45%),
+    radial-gradient(circle at 75% 70%, rgba(182, 0, 248, 0.35), transparent 45%),
+    linear-gradient(180deg, #191c22, #0b0e14);
+}
+.profile-avatar::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.link-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px;
+  padding: 13px 14px;
+  border: 1px solid #3b494b;
+  transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+.link-row:hover {
+  border-color: #00dbe9;
+  background: rgba(0, 219, 233, 0.06);
+  color: #00dbe9;
+}
+
+.timeline { position: relative; padding-left: 26px; }
+.timeline::before {
+  content: "";
+  position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px;
+  background: #3b494b;
+}
+.timeline-item { position: relative; padding-bottom: 28px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: "";
+  position: absolute; left: -26px; top: 4px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: #10131a; border: 2px solid #00dbe9;
+  box-shadow: 0 0 10px rgba(0, 219, 233, 0.5);
+}
+
+.skill-track {
+  height: 5px;
+  background: #272a31;
+  position: relative;
+  overflow: hidden;
+}
+.skill-fill {
+  position: absolute; inset: 0 auto 0 0; height: 100%;
+  background: linear-gradient(90deg, #00dbe9, #dbfcff);
+  box-shadow: 0 0 10px rgba(0, 219, 233, 0.5);
+  width: 0;
+  transition: width 1s cubic-bezier(.16,.8,.3,1);
+}
+
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #3b494b;
+  border: 1px solid #3b494b;
+}
+.stat-cell {
+  background: #0b0e14;
+  padding: 18px 20px;
+}
+.stat-cell .num {
+  font-family: anybody, sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: #dbfcff;
+  text-shadow: 0 0 18px rgba(0, 219, 233, 0.4);
+  display: block;
+}
+
+.chip {
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  border: 1px solid #849495;
+  padding: 8px 14px;
+  color: #b9cacb;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+.chip:hover { color: #00dbe9; border-color: #00dbe9; }

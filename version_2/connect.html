@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VORTEX_CORE // CONNECT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;900&amp;family=Space+Mono:wght@400;700&amp;family=Geist:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+<script src="js/tailwind-config.js"></script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+
+<div class="fixed inset-0 z-0">
+<canvas id="shader-canvas" class="absolute inset-0 w-full h-full opacity-60" style="display:block;width:100%;height:100%"></canvas>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-primary/30 shadow-[0_0_15px_rgba(0,219,233,0.3)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-lg text-headline-lg-mobile md:text-headline-lg font-black text-primary uppercase tracking-tighter italic" href="index.html">VORTEX_CORE</a>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:skew-x-[-10deg] active:scale-95" href="index.html">MISSIONS</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:skew-x-[-10deg] active:scale-95" href="projects.html">PROJECTS</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:skew-x-[-10deg] active:scale-95" href="command.html">COMMAND</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors hover:skew-x-[-10deg] active:scale-95" href="intel.html">INTEL</a>
+</div>
+<div class="flex items-center gap-4">
+<a href="connect.html" class="hidden md:inline-block bg-primary text-on-primary font-bold px-6 py-2 rounded-none hover:skew-x-[-10deg] hover:shadow-[0_0_10px_#00dbe9] transition-all active:scale-95 uppercase">CONNECT</a>
+<button class="md:hidden text-primary" id="mobile-nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+<div class="hidden flex-col bg-background/95 border-t border-primary/20 md:hidden" id="mobile-nav">
+<a class="px-6 py-4 border-b border-primary/10 text-on-surface-variant font-label-mono text-label-mono" href="index.html">MISSIONS</a>
+<a class="px-6 py-4 border-b border-primary/10 text-on-surface-variant font-label-mono text-label-mono" href="projects.html">PROJECTS</a>
+<a class="px-6 py-4 border-b border-primary/10 text-on-surface-variant font-label-mono text-label-mono" href="command.html">COMMAND</a>
+<a class="px-6 py-4 border-b border-primary/10 text-on-surface-variant font-label-mono text-label-mono" href="intel.html">INTEL</a>
+<a class="px-6 py-4 text-primary font-label-mono text-label-mono" href="connect.html">CONNECT</a>
+</div>
+</nav>
+
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative">
+
+<header class="mb-16 border-l-4 border-primary pl-6">
+<p class="font-label-mono text-primary uppercase tracking-widest mb-2 flex items-center gap-2">
+<span class="w-2 h-2 bg-primary animate-pulse"></span>
+                OPEN_CHANNEL
+            </p>
+<h1 class="font-display-xl-mobile md:text-display-xl font-black uppercase tracking-tighter text-on-surface leading-none italic">
+                CONNECT <span class="text-primary">// TRANSMIT</span>
+</h1>
+<p class="max-w-2xl mt-4 text-on-surface-variant">
+                Send a transmission with the form, or reach me directly on one of the channels below. Typical response time: under 24 hours.
+            </p>
+</header>
+
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-gutter items-start">
+
+<!-- Contact form -->
+<div class="cyber-border bg-white/5 backdrop-blur-md p-8">
+<h2 class="text-xl font-bold uppercase text-white mb-1">Send a Transmission</h2>
+<p class="text-sm text-on-surface-variant mb-8">Fields marked required must be filled before the message can be sent.</p>
+
+<form id="contact-form" novalidate>
+<div class="grid sm:grid-cols-2 gap-6 mb-6">
+<div class="field" data-field="name">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="Your full name" required/>
+<span class="field-error-msg">Enter your name.</span>
+</div>
+<div class="field" data-field="email">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="you@domain.com" required/>
+<span class="field-error-msg">Enter a valid email.</span>
+</div>
+</div>
+
+<div class="field mb-6" data-field="phone">
+<label for="phone">Phone <span class="text-outline normal-case tracking-normal">(optional)</span></label>
+<input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000"/>
+</div>
+
+<div class="field mb-6" data-field="message">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="What are you looking to build?" required></textarea>
+<span class="field-error-msg">Add a short message before sending.</span>
+</div>
+
+<div class="flex flex-wrap items-center gap-6">
+<button type="submit" class="px-8 py-4 bg-primary text-background font-bold tracking-widest uppercase hover:shadow-[0_0_20px_rgba(0,219,233,0.5)] transition-all">Send Transmission</button>
+<span class="font-label-mono text-xs text-outline" id="form-status">// AWAITING_INPUT</span>
+</div>
+</form>
+</div>
+
+<!-- Channels -->
+<aside class="cyber-border bg-white/5 backdrop-blur-md p-6">
+<h2 class="text-lg font-bold uppercase text-white mb-1">Direct Channels</h2>
+<p class="text-sm text-on-surface-variant mb-6">Prefer to skip the form? Ping me here.</p>
+
+<div class="flex flex-col gap-3 mb-6">
+
+<a class="channel-row" href="mailto:hello@vortexcore.dev">
+<span class="flex items-center gap-3">
+<span class="channel-icon"><span class="material-symbols-outlined text-base">alternate_email</span></span>
+<span>
+<span class="block text-sm font-bold text-on-surface">Email</span>
+<span class="block text-[10.5px] text-outline">hello@vortexcore.dev</span>
+</span>
+</span>
+<span class="material-symbols-outlined text-outline text-base">north_east</span>
+</a>
+
+<a class="channel-row" href="tel:+15550000000">
+<span class="flex items-center gap-3">
+<span class="channel-icon"><span class="material-symbols-outlined text-base">call</span></span>
+<span>
+<span class="block text-sm font-bold text-on-surface">Phone</span>
+<span class="block text-[10.5px] text-outline">+1 (555) 000-0000</span>
+</span>
+</span>
+<span class="material-symbols-outlined text-outline text-base">north_east</span>
+</a>
+
+<a class="channel-row" href="https://t.me/yourhandle" target="_blank" rel="noopener">
+<span class="flex items-center gap-3">
+<span class="channel-icon"><span class="material-symbols-outlined text-base">send</span></span>
+<span>
+<span class="block text-sm font-bold text-on-surface">Telegram</span>
+<span class="block text-[10.5px] text-outline">@yourhandle</span>
+</span>
+</span>
+<span class="material-symbols-outlined text-outline text-base">north_east</span>
+</a>
+
+<a class="channel-row" href="https://discord.com/users/yourid" target="_blank" rel="noopener">
+<span class="flex items-center gap-3">
+<span class="channel-icon"><span class="material-symbols-outlined text-base">forum</span></span>
+<span>
+<span class="block text-sm font-bold text-on-surface">Discord</span>
+<span class="block text-[10.5px] text-outline">yourhandle</span>
+</span>
+</span>
+<span class="material-symbols-outlined text-outline text-base">north_east</span>
+</a>
+
+<a class="channel-row" href="https://github.com/" target="_blank" rel="noopener">
+<span class="flex items-center gap-3">
+<span class="channel-icon"><span class="material-symbols-outlined text-base">code</span></span>
+<span>
+<span class="block text-sm font-bold text-on-surface">Github</span>
+<span class="block text-[10.5px] text-outline">github.com/yourhandle</span>
+</span>
+</span>
+<span class="material-symbols-outlined text-outline text-base">north_east</span>
+</a>
+
+<a class="channel-row" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+<span class="flex items-center gap-3">
+<span class="channel-icon"><span class="material-symbols-outlined text-base">work</span></span>
+<span>
+<span class="block text-sm font-bold text-on-surface">LinkedIn</span>
+<span class="block text-[10.5px] text-outline">/in/yourhandle</span>
+</span>
+</span>
+<span class="material-symbols-outlined text-outline text-base">north_east</span>
+</a>
+
+</div>
+
+<p class="text-[11px] text-outline border-t border-outline-variant pt-4 leading-relaxed">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary mr-2 align-middle" style="box-shadow:0 0 6px #00dbe9;"></span>
+System monitored daily // response window: 24h
+</p>
+</aside>
+
+</div>
+</main>
+
+<footer class="w-full border-t border-outline-variant bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-8 gap-gutter max-w-container-max mx-auto">
+<div class="font-label-mono text-primary flex items-center gap-4">
+<span class="material-symbols-outlined text-sm">security</span>
+                VORTEX_CORE
+            </div>
+<div class="font-label-mono text-outline text-xs">
+                © 2026 VORTEX_CORE // SYSTEM_VERSION_4.0.1
+            </div>
+<div class="flex gap-6">
+<a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300" href="#">TERMINAL</a>
+<a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300" href="#">ENCRYPTION</a>
+<a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300" href="#">LOGS</a>
+<a class="font-label-mono text-label-mono text-outline hover:text-primary transition-all duration-300" href="#">STATUS</a>
+</div>
+</div>
+</footer>
+
+<script src="js/script.js"></script>
+</body></html>
